@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SENRecommendViewController">
+            <connections>
+                <outlet property="listTableView" destination="vmG-si-22d" id="Fmg-CD-0ja"/>
+                <outlet property="userTableView" destination="oaZ-VW-vSM" id="WHm-Sg-dcV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vmG-si-22d" userLabel="left">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="2u5-73-GZU"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="n4f-Du-Cch"/>
+                        <outlet property="delegate" destination="-1" id="Box-MJ-Svf"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oaZ-VW-vSM" userLabel="right">
+                    <rect key="frame" x="70" y="0.0" width="305" height="667"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="uMR-gi-Snr"/>
+                        <outlet property="delegate" destination="-1" id="au4-CH-Lhs"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oaZ-VW-vSM" firstAttribute="leading" secondItem="vmG-si-22d" secondAttribute="trailing" id="4fX-dX-uvM"/>
+                <constraint firstAttribute="bottom" secondItem="oaZ-VW-vSM" secondAttribute="bottom" id="BVj-aR-r0k"/>
+                <constraint firstItem="vmG-si-22d" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Va0-n4-ZMH"/>
+                <constraint firstItem="vmG-si-22d" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dSV-7d-F79"/>
+                <constraint firstAttribute="trailing" secondItem="oaZ-VW-vSM" secondAttribute="trailing" id="i0k-SP-TIS"/>
+                <constraint firstItem="oaZ-VW-vSM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="loO-Rx-2dk"/>
+                <constraint firstAttribute="bottom" secondItem="vmG-si-22d" secondAttribute="bottom" id="vVu-Sf-a9n"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
