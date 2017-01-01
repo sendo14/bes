@@ -10,5 +10,14 @@
 
 @interface SENSudoku : NSObject
 
-+ (void)sudokuWithColumn:(NSUInteger)column line:(NSUInteger)line width:(CGFloat)width height:(CGFloat)height atTheSuperView:(UIView *)theSuperView;
++ (void)sudokuWithItem:(UIView *)item width:(CGFloat)width height:(CGFloat)height column:(NSUInteger)column line:(NSUInteger)line inTheSuperView:(UIView *)theSuperView;
+
++ (void)sudokuWithImageArray:(NSArray *)imageArray
+                  titleArray:(NSArray *)titleArray
+                       width:(CGFloat)itemW
+                      height:(CGFloat)itemH
+                      startX:(CGFloat)startX
+                      column:(NSUInteger)column
+                        line:(NSUInteger)line
+              inTheSuperView:(UIView *)theSuperView;
 @end

@@ -8,9 +8,13 @@
 
 #import "SENTestViewViewController.h"
 #import "SENSudoku.h"
+#import "SENVerticalButton.h"
 
 @interface SENTestViewViewController ()
 @property (weak, nonatomic) IBOutlet UIView *testView;
+@property (nonatomic, strong) UIButton *btn;
+@property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSArray *titleArray;
 
 @end
 
@@ -18,12 +22,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+//    self.btn = [[UIButton alloc] init];
+//    self.btn.backgroundColor = [UIColor yellowColor];
+    self.imageArray = @[@"publish-video", @"publish-picture", @"publish-text", @"publish-audio", @"publish-review", @"publish-offline"];
+    self.titleArray = @[@"发视频", @"发图片", @"发段子", @"发声音", @"审帖", @"离线下载"];
+    
+
+    [SENSudoku sudokuWithImageArray:self.imageArray
+                         titleArray:self.titleArray
+                              width:60
+                             height:90
+                             startX:20
+                             column:3
+                               line:2
+                     inTheSuperView:_testView];
+
 }
 
 - (IBAction)testButton:(id)sender {
     // 测试在SENMeViewController，点击月亮图标
-    [SENSudoku sudokuWithColumn:5 line:4 width:40 height:60 atTheSuperView:_testView];
+//    [SENSudoku sudokuWithItem:self.btn width:65 height:75 column:5 line:4 inTheSuperView:_testView];
 }
 
 

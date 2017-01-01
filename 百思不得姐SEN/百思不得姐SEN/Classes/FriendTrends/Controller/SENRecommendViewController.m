@@ -8,19 +8,16 @@
 
 #import "SENRecommendViewController.h"
 
-
 #import "SENRecommendList.h"
 #import "SENRecommendUser.h"
 
 #import "SENRecommendListCell.h"
 #import "SENRecommendUserCell.h"
 
-
-// pods
-#import "AFNetworking.h"
-#import "SVProgressHUD.h"
-#import "MJExtension.h"
-#import "MJRefresh.h"
+#import <AFNetworking.h>
+#import <SVProgressHUD.h>
+#import <MJExtension.h>
+#import <MJRefresh.h>
 
 #define SENSelectedListNumber self.lists[self.listTableView.indexPathForSelectedRow.row]
 
@@ -59,7 +56,9 @@ static NSString * const SENUserID = @"user";
         [self.listTableView reloadData];
         
         // 默认选中首行
-        [self.listTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+        [self.listTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                                        animated:NO
+                                  scrollPosition:UITableViewScrollPositionTop];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"加载失败"];
@@ -99,7 +98,10 @@ static NSString * const SENUserID = @"user";
     params[@"category_id"] = @(listRow.id); // ???
     params[@"page"] = @"2";
     
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
+                             parameters:params
+                               progress:nil
+                                success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSArray *users = [SENRecommendUser mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         [listRow.users addObjectsFromArray:users];

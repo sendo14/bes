@@ -7,6 +7,7 @@
 //
 
 #import "SENSudoku.h"
+#import "SENVerticalButton.h"
 
 @implementation SENSudoku
 
@@ -16,17 +17,19 @@
  * x值＝列号 *（子控件宽＋列间距），y值＝行号 *（子控件高＋行间距）
  * 列号＝index％列数,行号＝index／列数    ----计算时依靠固定列数
  */
-+ (void)sudokuWithColumn:(NSUInteger)column line:(NSUInteger)line width:(CGFloat)width height:(CGFloat)height atTheSuperView:(UIView *)theSuperView{
+
+// 按钮添加
++ (void)sudokuWithItem:(UIView *)item width:(CGFloat)width height:(CGFloat)height column:(NSUInteger)column line:(NSUInteger)line inTheSuperView:(UIView *)theSuperView{
     
     // 预定义
-    CGFloat objectW = width;
-    CGFloat objectH = height;
+    CGFloat itemW = width;
+    CGFloat itemH = height;
     NSUInteger cols = column;
     NSUInteger lines = line;
     
-    // margin计算
-    CGFloat colMargin = (theSuperView.frame.size.width - cols * objectW)/(cols - 1);
-    CGFloat rowMargin = (theSuperView.frame.size.height - lines * objectH)/(lines - 1);
+    // 间距计算
+    CGFloat colMargin = (theSuperView.frame.size.width - cols * itemW)/(cols - 1);
+    CGFloat rowMargin = (theSuperView.frame.size.height - lines * itemH)/(lines - 1);
     
     // 父控件中已经添加的子控件个数
     NSUInteger index = theSuperView.subviews.count;
@@ -35,15 +38,51 @@
     NSUInteger col = index % cols;
     NSUInteger row = index / cols;
     
-    CGFloat objectX = col * (objectW + colMargin);
-    CGFloat objectY = row * (objectH + rowMargin);
+    CGFloat itemX = col * (itemW + colMargin);
+    CGFloat itemY = row * (itemH + rowMargin);
     
-    // 创建要添加的控件
-    UIView *objectView = [[UIView alloc] init];
-    objectView.backgroundColor = [UIColor yellowColor];
-    objectView.frame = CGRectMake(objectX, objectY, objectW, objectH);
-    [theSuperView addSubview:objectView];
+    // 设置要添加控件的位置
+
+    item.frame = CGRectMake(itemX, itemY, itemW, itemH);
+    [theSuperView addSubview:item];
+
+}
+
+
+// 直接布局
++ (void)sudokuWithImageArray:(NSArray *)imageArray
+                  titleArray:(NSArray *)titleArray
+                       width:(CGFloat)itemW
+                      height:(CGFloat)itemH
+                      startX:(CGFloat)startX
+                      column:(NSUInteger)column
+                      line:(NSUInteger)line
+              inTheSuperView:(UIView *)theSuperView{
     
-    theSuperView.clipsToBounds = YES;
+//    CGFloat buttonStartY = (theSuperView.bounds.size.height - line * itemH) * 0.5;
+    CGFloat xMargin = (theSuperView.bounds.size.width - 2 * startX - column * itemW) / (column - 1);
+    CGFloat yMargin = (theSuperView.bounds.size.height - line * itemH) / (line - 1);
+//    CGFloat colMargin = (theSuperView.frame.size.width - column * itemW)/(column - 1);
+//    CGFloat rowMargin = (theSuperView.frame.size.height - line * itemH)/(line - 1);
+    
+    for (int i = 0; i<imageArray.count; i++) {
+        SENVerticalButton *button = [[SENVerticalButton alloc] init];
+        // 设置内容
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
+        [button setTitle:titleArray[i] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
+        
+        // 设置frame
+        button.width = itemW;
+        button.height = itemH;
+        int row = i / column;
+        int col = i % column;
+        
+        button.x = startX + col * (itemW + xMargin);
+        button.y = row * (itemH + yMargin);
+
+        [theSuperView addSubview:button];
+    }
 }
 @end
