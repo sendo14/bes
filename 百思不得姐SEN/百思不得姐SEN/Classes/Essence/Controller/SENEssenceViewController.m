@@ -8,11 +8,53 @@
 
 #import "SENEssenceViewController.h"
 
+#import "SENAllViewController.h"
+#import "SENVideoViewController.h"
+#import "SENVoiceViewController.h"
+#import "SENPictureViewController.h"
+#import "SENWordViewController.h"
+
+@interface SENEssenceViewController() <UIScrollViewDelegate>
+
+@end
+
 @implementation SENEssenceViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    [self setupNaviItem];
+    [self setupChildVC];
+    [self setupTitlesView];
+    [self setupContentView];
+}
+
+- (void)setupContentView{
+
+}
+
+- (void)setupTitlesView{
+
+}
+
+- (void)setupChildVC{
+    SENAllViewController *allVC = [[SENAllViewController alloc] init];
+    [self addChildViewController:allVC];
+    
+    SENVideoViewController *videoVC = [[SENVideoViewController alloc] init];
+    [self addChildViewController:videoVC];
+    
+    SENVoiceViewController *voiceVC = [[SENVoiceViewController alloc] init];
+    [self addChildViewController:voiceVC];
+    
+    SENPictureViewController *pictureVC = [[SENPictureViewController alloc] init];
+    [self addChildViewController:pictureVC];
+    
+    SENWordViewController *wordVC = [[SENWordViewController alloc] init];
+    [self addChildViewController:wordVC];
+}
+
+- (void)setupNaviItem{
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemwith:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(tagClick)];
@@ -23,12 +65,6 @@
 - (void)tagClick{
     SENLogFunc;
 }
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    UIViewController *vc = [[UIViewController alloc] init];
-//    vc.view.backgroundColor = SENGlobalBG;
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
 
 
 
