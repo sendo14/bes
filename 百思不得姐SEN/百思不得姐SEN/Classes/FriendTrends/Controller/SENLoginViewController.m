@@ -37,7 +37,7 @@
     [self.view endEditing:YES];
     
     if (self.leftConstraint.constant == 0) {
-        self.leftConstraint.constant = - self.view.width;
+        self.leftConstraint.constant = - self.view.sen_width;
         button.selected = YES;
     } else {
         self.leftConstraint.constant = 0;

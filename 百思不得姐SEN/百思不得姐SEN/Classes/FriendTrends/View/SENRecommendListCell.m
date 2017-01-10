@@ -35,8 +35,8 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    self.textLabel.y = 2;
-    self.textLabel.height = self.contentView.height - 2 * self.textLabel.y;
+    self.textLabel.sen_y = 2;
+    self.textLabel.sen_height = self.contentView.sen_height - 2 * self.textLabel.sen_y;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated{

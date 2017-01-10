@@ -42,7 +42,7 @@
     contentView.delegate = self;
     contentView.pagingEnabled = YES;
     [self.view insertSubview:contentView atIndex:0];
-    contentView.contentSize = CGSizeMake(contentView.width * self.childViewControllers.count, 0);
+    contentView.contentSize = CGSizeMake(contentView.sen_width * self.childViewControllers.count, 0);
     self.contentView = contentView;
     
     [self scrollViewDidEndScrollingAnimation:contentView];
@@ -53,29 +53,29 @@
     // setup titlesView
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.7];
-    titlesView.width = self.view.width;
-    titlesView.height = 35;
-    titlesView.y = 64;
+    titlesView.sen_width = self.view.sen_width;
+    titlesView.sen_height = 35;
+    titlesView.sen_y = 64;
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
     // setupIndicator
     UIView *indicatorView = [[UIView alloc] init];
     indicatorView.backgroundColor = [UIColor redColor];
-    indicatorView.height = 2;
-    indicatorView.y = titlesView.height - indicatorView.height;
+    indicatorView.sen_height = 2;
+    indicatorView.sen_y = titlesView.sen_height - indicatorView.sen_height;
     indicatorView.tag = -1;
     self.indicatorView = indicatorView;
     
     // setupBtn
     NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    CGFloat width = titlesView.width / titles.count;
-    CGFloat height = titlesView.height;
+    CGFloat width = titlesView.sen_width / titles.count;
+    CGFloat height = titlesView.sen_height;
     for (NSInteger i = 0; i < titles.count; i++) {
         UIButton *btn = [[UIButton alloc] init];
-        btn.width = width;
-        btn.height = height;
-        btn.x = i * width;
+        btn.sen_width = width;
+        btn.sen_height = height;
+        btn.sen_x = i * width;
         btn.tag = i;
         [btn setTitle:titles[i] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -89,8 +89,8 @@
             self.selectedBtn = btn;
             
             [btn.titleLabel sizeToFit];
-            self.indicatorView.width = btn.titleLabel.width;
-            self.indicatorView.centerX = btn.centerX;
+            self.indicatorView.sen_width = btn.titleLabel.sen_width;
+            self.indicatorView.sen_centerX = btn.sen_centerX;
         }
     }
     [titlesView addSubview:indicatorView];// 指示器放在最后
@@ -102,12 +102,12 @@
     self.selectedBtn = btn;
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.indicatorView.width = btn.titleLabel.width;
-        self.indicatorView.centerX = btn.centerX;
+        self.indicatorView.sen_width = btn.titleLabel.sen_width;
+        self.indicatorView.sen_centerX = btn.sen_centerX;
     }];
     
     CGPoint offset = self.contentView.contentOffset;
-    offset.x = self.contentView.width * btn.tag;
+    offset.x = self.contentView.sen_width * btn.tag;
     [self.contentView setContentOffset:offset animated:YES];
 }
 
@@ -142,15 +142,15 @@
 
 #pragma mark - <UIScrollViewDelegate>
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    NSInteger index = scrollView.contentOffset.x / scrollView.sen_width;
     
     UITableViewController *vc = self.childViewControllers[index];
-    vc.view.x = scrollView.contentOffset.x;
-    vc.view.y = 0; // 默认20
-    vc.view.height = scrollView.height; // y上移之后整体上移了20，所以要重新设置高度
+    vc.view.sen_x = scrollView.contentOffset.x;
+    vc.view.sen_y = 0; // 默认20
+    vc.view.sen_height = scrollView.sen_height; // y上移之后整体上移了20，所以要重新设置高度
     
     CGFloat top = CGRectGetMaxY(self.titlesView.frame);
-    CGFloat bottom = self.tabBarController.tabBar.height;
+    CGFloat bottom = self.tabBarController.tabBar.sen_height;
     vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
     
@@ -161,7 +161,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     [self scrollViewDidEndScrollingAnimation:scrollView];
     
-    NSInteger index = scrollView.contentOffset.x / scrollView.width;
+    NSInteger index = scrollView.contentOffset.x / scrollView.sen_width;
     [self titleClick:self.titlesView.subviews[index]];
 }
 

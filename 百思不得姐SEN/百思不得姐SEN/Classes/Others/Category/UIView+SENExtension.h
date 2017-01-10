@@ -10,12 +10,12 @@
 
 @interface UIView (SENExtension)
 
-@property (nonatomic, assign) CGSize size;
-@property (nonatomic, assign) CGFloat width;
-@property (nonatomic, assign) CGFloat height;
-@property (nonatomic, assign) CGFloat x;
-@property (nonatomic, assign) CGFloat y;
-@property (nonatomic, assign) CGFloat centerX;
-@property (nonatomic, assign) CGFloat centerY;
+@property (nonatomic, assign) CGSize sen_size;
+@property (nonatomic, assign) CGFloat sen_width;
+@property (nonatomic, assign) CGFloat sen_height;
+@property (nonatomic, assign) CGFloat sen_x;
+@property (nonatomic, assign) CGFloat sen_y;
+@property (nonatomic, assign) CGFloat sen_centerX;
+@property (nonatomic, assign) CGFloat sen_centerY;
 
 @end

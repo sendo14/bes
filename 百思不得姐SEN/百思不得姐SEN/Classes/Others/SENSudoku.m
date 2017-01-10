@@ -74,13 +74,13 @@
         [button setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
         
         // 设置frame
-        button.width = itemW;
-        button.height = itemH;
+        button.sen_width = itemW;
+        button.sen_height = itemH;
         int row = i / column;
         int col = i % column;
         
-        button.x = startX + col * (itemW + xMargin);
-        button.y = row * (itemH + yMargin);
+        button.sen_x = startX + col * (itemW + xMargin);
+        button.sen_y = row * (itemH + yMargin);
 
         [theSuperView addSubview:button];
     }

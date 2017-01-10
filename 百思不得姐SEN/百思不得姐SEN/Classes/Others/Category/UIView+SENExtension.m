@@ -12,76 +12,77 @@
 
 // setter
 
-- (void)setSize:(CGSize)size{
+
+- (void)setSen_size:(CGSize)sen_size{
     CGRect frame = self.frame;
-    frame.size = size;
+    frame.size = sen_size;
     self.frame = frame;
 }
 
-- (void)setWidth:(CGFloat)width{
+- (void)setSen_width:(CGFloat)sen_width{
     CGRect frame = self.frame;
-    frame.size.width = width;
+    frame.size.width = sen_width;
     self.frame = frame;
 }
 
-- (void)setHeight:(CGFloat)height{
+- (void)setSen_height:(CGFloat)sen_height{
     CGRect frame = self.frame;
-    frame.size.height = height;
+    frame.size.height = sen_height;
     self.frame = frame;
 }
 
-- (void)setX:(CGFloat)x{
+- (void)setSen_x:(CGFloat)sen_x{
     CGRect frame = self.frame;
-    frame.origin.x = x;
+    frame.origin.x = sen_x;
     self.frame = frame;
 }
 
-- (void)setY:(CGFloat)y{
+- (void)setSen_y:(CGFloat)sen_y{
     CGRect frame = self.frame;
-    frame.origin.y = y;
+    frame.origin.y = sen_y;
     self.frame = frame;
 }
 
-- (void)setCenterX:(CGFloat)centerX{
+- (void)setSen_centerX:(CGFloat)sen_centerX{
     CGPoint center = self.center;
-    center.x = centerX;
+    center.x = sen_centerX;
     self.center = center;
 }
 
-- (void)setCenterY:(CGFloat)centerY{
+- (void)setSen_centerY:(CGFloat)sen_centerY{
     CGPoint center = self.center;
-    center.y = centerY;
+    center.y = sen_centerY;
     self.center = center;
 }
 
 
 // getter
 
-- (CGSize)size{
+- (CGSize)sen_size{
     return self.frame.size;
 }
 
-- (CGFloat)width{
+- (CGFloat)sen_width{
     return self.frame.size.width;
 }
 
-- (CGFloat)height{
+- (CGFloat)sen_height{
     return self.frame.size.height;
 }
 
-- (CGFloat)x{
+- (CGFloat)sen_x{
     return self.frame.origin.x;
 }
 
-- (CGFloat)y{
+- (CGFloat)sen_y{
     return self.frame.origin.y;
 }
 
-- (CGFloat)centerX{
+- (CGFloat)sen_centerX{
     return self.center.x;
 }
 
-- (CGFloat)centerY{
+- (CGFloat)sen_centerY{
     return self.center.y;
 }
 

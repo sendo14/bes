@@ -24,7 +24,7 @@
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [publishButton setBackgroundImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateHighlighted];
         
-        publishButton.size = publishButton.currentBackgroundImage.size;
+        publishButton.sen_size = publishButton.currentBackgroundImage.size;
         [self addSubview:publishButton];
         self.publishButton = publishButton;
     }
