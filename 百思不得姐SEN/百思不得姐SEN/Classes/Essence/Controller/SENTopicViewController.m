@@ -6,14 +6,19 @@
 //  Copyright © 2017年 sendo. All rights reserved.
 //
 
-#import "SENWordViewController.h"
+#import "SENTopicViewController.h"
+
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import <MJExtension.h>
 #import <MJRefresh.h>
-#import "SENTopic.h"
 
-@interface SENWordViewController ()
+#import "SENTopic.h"
+#import "SENTopicCell.h"
+
+static NSString * const topicCellID = @"topic";
+
+@interface SENTopicViewController ()
 
 @property (nonatomic, strong) NSMutableArray *topics;
 @property (nonatomic, assign) NSInteger page;
@@ -22,7 +27,7 @@
 
 @end
 
-@implementation SENWordViewController
+@implementation SENTopicViewController
 
 - (NSMutableArray *)topics{
     if (!_topics) {
@@ -38,9 +43,18 @@
     [self setupRefresh];
 }
 
+
 - (void)setupTableView{
+    
+    CGFloat top = SENTitlesViewH + SENTitlesViewY;
+    CGFloat bottom = self.tabBarController.tabBar.sen_height;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SENTopicCell class]) bundle:nil] forCellReuseIdentifier:topicCellID];
 }
 
 - (void)setupRefresh{
@@ -49,7 +63,7 @@
     self.tableView.mj_header.automaticallyChangeAlpha = YES;
     
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopics)];
-//    self.tableView.mj_footer.hidden = YES;
+    //    self.tableView.mj_footer.hidden = YES;
     
 }
 
@@ -59,7 +73,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
@@ -84,7 +98,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     params[@"page"] = @(self.page);
     params[@"maxtime"] = self.maxtime;
     
@@ -112,22 +126,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SENTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:topicCellID];
     
-    static NSString *ID = @"cell";
+    cell.topic = self.topics[indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    
-    SENTopic *topic = self.topics[indexPath.row];
-    cell.textLabel.text = topic.name;
-    cell.detailTextLabel.text = topic.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]
-                      placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 200;
 }
 
 @end

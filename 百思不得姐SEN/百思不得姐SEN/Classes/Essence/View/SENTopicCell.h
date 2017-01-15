@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class SENTopic;
+
 @interface SENTopicCell : UITableViewCell
+
+@property (nonatomic, strong) SENTopic *topic;
 
 @end

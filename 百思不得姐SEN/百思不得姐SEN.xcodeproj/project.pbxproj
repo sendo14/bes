@@ -35,13 +35,10 @@
 		C78D13F71DE7E0A800990EB2 /* SENRecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78D13F51DE7E0A800990EB2 /* SENRecommendListCell.m */; };
 		C78D13F81DE7E0A800990EB2 /* SENRecommendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78D13F61DE7E0A800990EB2 /* SENRecommendListCell.xib */; };
 		C78E3C1A1DE9720800EAE94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78E3C191DE9720800EAE94D /* Assets.xcassets */; };
-		C790126A1E1DEB18001DCB4B /* SENAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79012691E1DEB18001DCB4B /* SENAllViewController.m */; };
-		C790126D1E1DEB2A001DCB4B /* SENVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790126C1E1DEB2A001DCB4B /* SENVideoViewController.m */; };
-		C79012701E1DEB39001DCB4B /* SENVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C790126F1E1DEB39001DCB4B /* SENVoiceViewController.m */; };
-		C79012731E1DEB4A001DCB4B /* SENPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79012721E1DEB4A001DCB4B /* SENPictureViewController.m */; };
-		C79012761E1DEB5C001DCB4B /* SENWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79012751E1DEB5C001DCB4B /* SENWordViewController.m */; };
 		C7946FCC1DF2ABBA0055C9AD /* SENLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7946FCA1DF2ABBA0055C9AD /* SENLoginViewController.m */; };
 		C7946FCD1DF2ABBA0055C9AD /* SENLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7946FCB1DF2ABBA0055C9AD /* SENLoginViewController.xib */; };
+		C797112C1E26236A00B27BBF /* SENConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C797112B1E26236A00B27BBF /* SENConst.m */; };
+		C79EEC461E2B53E200CE9B05 /* SENTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C79EEC451E2B53E200CE9B05 /* SENTopicViewController.m */; };
 		C7C55DEE1DE096EA003E46B2 /* SENEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C55DD01DE096EA003E46B2 /* SENEssenceViewController.m */; };
 		C7C55DEF1DE096EA003E46B2 /* SENFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C55DD61DE096EA003E46B2 /* SENFriendTrendsViewController.m */; };
 		C7C55DF01DE096EA003E46B2 /* SENMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C55DDC1DE096EA003E46B2 /* SENMeViewController.m */; };
@@ -121,19 +118,13 @@
 		C78D13F51DE7E0A800990EB2 /* SENRecommendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENRecommendListCell.m; sourceTree = "<group>"; };
 		C78D13F61DE7E0A800990EB2 /* SENRecommendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENRecommendListCell.xib; sourceTree = "<group>"; };
 		C78E3C191DE9720800EAE94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C79012681E1DEB18001DCB4B /* SENAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENAllViewController.h; sourceTree = "<group>"; };
-		C79012691E1DEB18001DCB4B /* SENAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENAllViewController.m; sourceTree = "<group>"; };
-		C790126B1E1DEB2A001DCB4B /* SENVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENVideoViewController.h; sourceTree = "<group>"; };
-		C790126C1E1DEB2A001DCB4B /* SENVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENVideoViewController.m; sourceTree = "<group>"; };
-		C790126E1E1DEB39001DCB4B /* SENVoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENVoiceViewController.h; sourceTree = "<group>"; };
-		C790126F1E1DEB39001DCB4B /* SENVoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENVoiceViewController.m; sourceTree = "<group>"; };
-		C79012711E1DEB4A001DCB4B /* SENPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENPictureViewController.h; sourceTree = "<group>"; };
-		C79012721E1DEB4A001DCB4B /* SENPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENPictureViewController.m; sourceTree = "<group>"; };
-		C79012741E1DEB5C001DCB4B /* SENWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENWordViewController.h; sourceTree = "<group>"; };
-		C79012751E1DEB5C001DCB4B /* SENWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENWordViewController.m; sourceTree = "<group>"; };
 		C7946FC91DF2ABBA0055C9AD /* SENLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENLoginViewController.h; sourceTree = "<group>"; };
 		C7946FCA1DF2ABBA0055C9AD /* SENLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENLoginViewController.m; sourceTree = "<group>"; };
 		C7946FCB1DF2ABBA0055C9AD /* SENLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENLoginViewController.xib; sourceTree = "<group>"; };
+		C797112A1E26236A00B27BBF /* SENConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENConst.h; sourceTree = "<group>"; };
+		C797112B1E26236A00B27BBF /* SENConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENConst.m; sourceTree = "<group>"; };
+		C79EEC441E2B53E200CE9B05 /* SENTopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENTopicViewController.h; sourceTree = "<group>"; };
+		C79EEC451E2B53E200CE9B05 /* SENTopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENTopicViewController.m; sourceTree = "<group>"; };
 		C7C55DCF1DE096EA003E46B2 /* SENEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENEssenceViewController.h; sourceTree = "<group>"; };
 		C7C55DD01DE096EA003E46B2 /* SENEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENEssenceViewController.m; sourceTree = "<group>"; };
 		C7C55DD51DE096EA003E46B2 /* SENFriendTrendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENFriendTrendsViewController.h; sourceTree = "<group>"; };
@@ -279,16 +270,8 @@
 			children = (
 				C7C55DCF1DE096EA003E46B2 /* SENEssenceViewController.h */,
 				C7C55DD01DE096EA003E46B2 /* SENEssenceViewController.m */,
-				C79012681E1DEB18001DCB4B /* SENAllViewController.h */,
-				C79012691E1DEB18001DCB4B /* SENAllViewController.m */,
-				C790126B1E1DEB2A001DCB4B /* SENVideoViewController.h */,
-				C790126C1E1DEB2A001DCB4B /* SENVideoViewController.m */,
-				C790126E1E1DEB39001DCB4B /* SENVoiceViewController.h */,
-				C790126F1E1DEB39001DCB4B /* SENVoiceViewController.m */,
-				C79012711E1DEB4A001DCB4B /* SENPictureViewController.h */,
-				C79012721E1DEB4A001DCB4B /* SENPictureViewController.m */,
-				C79012741E1DEB5C001DCB4B /* SENWordViewController.h */,
-				C79012751E1DEB5C001DCB4B /* SENWordViewController.m */,
+				C79EEC441E2B53E200CE9B05 /* SENTopicViewController.h */,
+				C79EEC451E2B53E200CE9B05 /* SENTopicViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -442,6 +425,8 @@
 				C7C55DE71DE096EA003E46B2 /* AppDelegate.m */,
 				C78D11541DE7D08C00990EB2 /* Foundation+Log.m */,
 				C78AA8AF1DE189EC0098ACC7 /* PrefixHeader.pch */,
+				C797112A1E26236A00B27BBF /* SENConst.h */,
+				C797112B1E26236A00B27BBF /* SENConst.m */,
 				C7584BFA1E0D11CA00EFD9BC /* SENSudoku.h */,
 				C7584BFB1E0D11CA00EFD9BC /* SENSudoku.m */,
 				C7584BFF1E0D3A0700EFD9BC /* SENTestViewViewController.h */,
@@ -676,7 +661,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C79012701E1DEB39001DCB4B /* SENVoiceViewController.m in Sources */,
 				C7584C021E0D3A0700EFD9BC /* SENTestViewViewController.m in Sources */,
 				C78D11551DE7D08C00990EB2 /* Foundation+Log.m in Sources */,
 				C7C55DF41DE096EA003E46B2 /* SENTabBar.m in Sources */,
@@ -684,6 +668,7 @@
 				C72226311DDB0D7B00A321BA /* main.m in Sources */,
 				C7584BFC1E0D11CA00EFD9BC /* SENSudoku.m in Sources */,
 				C78554D91DE3E74C0077A3E9 /* SENNavigationController.m in Sources */,
+				C797112C1E26236A00B27BBF /* SENConst.m in Sources */,
 				C74CD1B41DF651B7001577B4 /* SENPushGuideView.m in Sources */,
 				C7C55DF21DE096EA003E46B2 /* AppDelegate.m in Sources */,
 				C743B0211DEA7B2000D1235A /* SENRecommendUserCell.m in Sources */,
@@ -693,17 +678,14 @@
 				C7472CA41E24CD2A00890178 /* SENTopicCell.m in Sources */,
 				C78D13F71DE7E0A800990EB2 /* SENRecommendListCell.m in Sources */,
 				C78D13F31DE7DB8A00990EB2 /* SENRecommendList.m in Sources */,
-				C790126A1E1DEB18001DCB4B /* SENAllViewController.m in Sources */,
 				C78AA8B21DE1A4BD0098ACC7 /* UIBarButtonItem+SENExtension.m in Sources */,
 				C7C55DEF1DE096EA003E46B2 /* SENFriendTrendsViewController.m in Sources */,
 				C7946FCC1DF2ABBA0055C9AD /* SENLoginViewController.m in Sources */,
 				C7826F201DF7A25D00D9E581 /* SENTextField.m in Sources */,
-				C790126D1E1DEB2A001DCB4B /* SENVideoViewController.m in Sources */,
+				C79EEC461E2B53E200CE9B05 /* SENTopicViewController.m in Sources */,
 				C7C55DF31DE096EA003E46B2 /* SENTabBarController.m in Sources */,
-				C79012761E1DEB5C001DCB4B /* SENWordViewController.m in Sources */,
 				C7C55DF01DE096EA003E46B2 /* SENMeViewController.m in Sources */,
 				C743B0251DEAB71000D1235A /* SENRecommendUser.m in Sources */,
-				C79012731E1DEB4A001DCB4B /* SENPictureViewController.m in Sources */,
 				C7472CA01E24821800890178 /* SENTopic.m in Sources */,
 				C78AA8AE1DE1804B0098ACC7 /* UIView+SENExtension.m in Sources */,
 			);

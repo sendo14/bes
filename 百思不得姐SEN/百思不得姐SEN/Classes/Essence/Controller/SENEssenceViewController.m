@@ -8,11 +8,7 @@
 
 #import "SENEssenceViewController.h"
 
-#import "SENAllViewController.h"
-#import "SENVideoViewController.h"
-#import "SENVoiceViewController.h"
-#import "SENPictureViewController.h"
-#import "SENWordViewController.h"
+#import "SENTopicViewController.h"
 
 @interface SENEssenceViewController() <UIScrollViewDelegate>
 
@@ -54,8 +50,8 @@
     UIView *titlesView = [[UIView alloc] init];
     titlesView.backgroundColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.7];
     titlesView.sen_width = self.view.sen_width;
-    titlesView.sen_height = 35;
-    titlesView.sen_y = 64;
+    titlesView.sen_height = SENTitlesViewH;
+    titlesView.sen_y = SENTitlesViewY;
     [self.view addSubview:titlesView];
     self.titlesView = titlesView;
     
@@ -68,16 +64,18 @@
     self.indicatorView = indicatorView;
     
     // setupBtn
-    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
-    CGFloat width = titlesView.sen_width / titles.count;
+//    NSArray *titles = @[@"全部",@"视频",@"声音",@"图片",@"段子"];
+    CGFloat width = titlesView.sen_width / self.childViewControllers.count;
     CGFloat height = titlesView.sen_height;
-    for (NSInteger i = 0; i < titles.count; i++) {
+    for (NSInteger i = 0; i < self.childViewControllers.count; i++) {
         UIButton *btn = [[UIButton alloc] init];
         btn.sen_width = width;
         btn.sen_height = height;
         btn.sen_x = i * width;
         btn.tag = i;
-        [btn setTitle:titles[i] forState:UIControlStateNormal];
+        
+        UIViewController *vc = self.childViewControllers[i];
+        [btn setTitle:vc.title forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor redColor] forState:UIControlStateDisabled];
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -112,20 +110,32 @@
 }
 
 - (void)setupChildVC{
-    SENAllViewController *allVC = [[SENAllViewController alloc] init];
+
+    SENTopicViewController *allVC = [[SENTopicViewController alloc] init];
+    allVC.title = @"全部";
+    allVC.type = SENTopicTypeAll;
     [self addChildViewController:allVC];
     
-    SENVideoViewController *videoVC = [[SENVideoViewController alloc] init];
-    [self addChildViewController:videoVC];
-    
-    SENVoiceViewController *voiceVC = [[SENVoiceViewController alloc] init];
-    [self addChildViewController:voiceVC];
-    
-    SENPictureViewController *pictureVC = [[SENPictureViewController alloc] init];
+    SENTopicViewController *pictureVC = [[SENTopicViewController alloc] init];
+    pictureVC.title = @"图片";
+    pictureVC.type = SENTopicTypePicture;
     [self addChildViewController:pictureVC];
     
-    SENWordViewController *wordVC = [[SENWordViewController alloc] init];
+    SENTopicViewController *wordVC = [[SENTopicViewController alloc] init];
+    wordVC.title = @"段子";
+    wordVC.type = SENTopicTypeWord;
     [self addChildViewController:wordVC];
+
+    SENTopicViewController *voiceVC = [[SENTopicViewController alloc] init];
+    voiceVC.title = @"声音";
+    voiceVC.type = SENTopicTypeVoice;
+    [self addChildViewController:voiceVC];
+    
+    SENTopicViewController *videoVC = [[SENTopicViewController alloc] init];
+    videoVC.title = @"视频";
+    videoVC.type = SENTopicTypeVideo;
+    [self addChildViewController:videoVC];
+    
 }
 
 - (void)setupNaviItem{
@@ -144,15 +154,10 @@
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     NSInteger index = scrollView.contentOffset.x / scrollView.sen_width;
     
-    UITableViewController *vc = self.childViewControllers[index];
+    UIViewController *vc = self.childViewControllers[index];
     vc.view.sen_x = scrollView.contentOffset.x;
     vc.view.sen_y = 0; // 默认20
     vc.view.sen_height = scrollView.sen_height; // y上移之后整体上移了20，所以要重新设置高度
-    
-    CGFloat top = CGRectGetMaxY(self.titlesView.frame);
-    CGFloat bottom = self.tabBarController.tabBar.sen_height;
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
     
     [scrollView addSubview:vc.view];
     
