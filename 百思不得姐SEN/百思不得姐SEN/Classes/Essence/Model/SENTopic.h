@@ -20,6 +20,7 @@
 @property (nonatomic, assign) NSInteger repost;
 @property (nonatomic, assign) NSInteger comment;
 
+@property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
 
 

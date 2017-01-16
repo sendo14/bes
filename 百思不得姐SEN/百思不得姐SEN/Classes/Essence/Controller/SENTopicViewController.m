@@ -75,6 +75,7 @@ static NSString * const topicCellID = @"topic";
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
     
+    // http://api.budejie.com/api/api_open.php
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
                              parameters:params

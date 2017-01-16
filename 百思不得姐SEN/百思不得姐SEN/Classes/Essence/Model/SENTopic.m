@@ -10,4 +10,34 @@
 
 @implementation SENTopic
 
+- (NSString *)create_time{
+    // 转格式
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *creatTime = [fmt dateFromString:_create_time];
+    
+    // 根据不同情况赋值,return string
+    if (creatTime.isThisYear) {
+        if (creatTime.isToday) {
+            NSDateComponents *cmps = [[NSDate date] gapFromDate:creatTime];
+            
+            if (cmps.hour >= 1) {
+                return [NSString stringWithFormat:@"%zd小时前", cmps.hour];
+            } else if (cmps.minute >= 1) {
+                return [NSString stringWithFormat:@"%zd分钟前", cmps.minute];
+            } else {
+                return @"刚刚";
+            }
+        } else if (creatTime.isYesterday) {
+            fmt.dateFormat = @"昨天 HH:mm:ss";
+            return [fmt stringFromDate:creatTime];
+        } else {
+            fmt.dateFormat = @"MM-dd HH:mm:ss";
+            return [fmt stringFromDate:creatTime];
+        }
+    } else {
+        return _create_time;
+    }
+}
+
 @end

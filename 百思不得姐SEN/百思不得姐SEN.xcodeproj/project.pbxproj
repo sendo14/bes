@@ -26,6 +26,7 @@
 		C7584C021E0D3A0700EFD9BC /* SENTestViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7584C001E0D3A0700EFD9BC /* SENTestViewViewController.m */; };
 		C7584C031E0D3A0700EFD9BC /* SENTestViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7584C011E0D3A0700EFD9BC /* SENTestViewViewController.xib */; };
 		C7826F201DF7A25D00D9E581 /* SENTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C7826F1F1DF7A25D00D9E581 /* SENTextField.m */; };
+		C782A93B1E2CA7680076F4FA /* NSDate+SENExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C782A93A1E2CA7680076F4FA /* NSDate+SENExtension.m */; };
 		C78554D91DE3E74C0077A3E9 /* SENNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C78554D81DE3E74C0077A3E9 /* SENNavigationController.m */; };
 		C787E8C01DF54BAC008D7404 /* SENVerticalButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C787E8BF1DF54BAC008D7404 /* SENVerticalButton.m */; };
 		C78AA8AE1DE1804B0098ACC7 /* UIView+SENExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C78AA8AD1DE1804B0098ACC7 /* UIView+SENExtension.m */; };
@@ -102,6 +103,8 @@
 		C7584C011E0D3A0700EFD9BC /* SENTestViewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENTestViewViewController.xib; sourceTree = "<group>"; };
 		C7826F1E1DF7A25D00D9E581 /* SENTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENTextField.h; sourceTree = "<group>"; };
 		C7826F1F1DF7A25D00D9E581 /* SENTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENTextField.m; sourceTree = "<group>"; };
+		C782A9391E2CA7680076F4FA /* NSDate+SENExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SENExtension.h"; sourceTree = "<group>"; };
+		C782A93A1E2CA7680076F4FA /* NSDate+SENExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SENExtension.m"; sourceTree = "<group>"; };
 		C78554D71DE3E74C0077A3E9 /* SENNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENNavigationController.h; sourceTree = "<group>"; };
 		C78554D81DE3E74C0077A3E9 /* SENNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENNavigationController.m; sourceTree = "<group>"; };
 		C787E8BE1DF54BAC008D7404 /* SENVerticalButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENVerticalButton.h; sourceTree = "<group>"; };
@@ -466,6 +469,8 @@
 				C78AA8AD1DE1804B0098ACC7 /* UIView+SENExtension.m */,
 				C78AA8B01DE1A4BD0098ACC7 /* UIBarButtonItem+SENExtension.h */,
 				C78AA8B11DE1A4BD0098ACC7 /* UIBarButtonItem+SENExtension.m */,
+				C782A9391E2CA7680076F4FA /* NSDate+SENExtension.h */,
+				C782A93A1E2CA7680076F4FA /* NSDate+SENExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -669,6 +674,7 @@
 				C7584BFC1E0D11CA00EFD9BC /* SENSudoku.m in Sources */,
 				C78554D91DE3E74C0077A3E9 /* SENNavigationController.m in Sources */,
 				C797112C1E26236A00B27BBF /* SENConst.m in Sources */,
+				C782A93B1E2CA7680076F4FA /* NSDate+SENExtension.m in Sources */,
 				C74CD1B41DF651B7001577B4 /* SENPushGuideView.m in Sources */,
 				C7C55DF21DE096EA003E46B2 /* AppDelegate.m in Sources */,
 				C743B0211DEA7B2000D1235A /* SENRecommendUserCell.m in Sources */,
