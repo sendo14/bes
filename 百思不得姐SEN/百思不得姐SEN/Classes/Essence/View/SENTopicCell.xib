@@ -142,12 +142,19 @@
                             <constraint firstAttribute="width" constant="14" id="y6b-si-EZd"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-KM-jEb">
+                        <rect key="frame" x="10" y="55" width="300" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="yvo-ca-mYX" secondAttribute="trailing" constant="10" id="8Ql-MW-FFH"/>
                     <constraint firstAttribute="bottom" secondItem="dVv-eW-eaJ" secondAttribute="bottom" id="Jms-kB-DAn"/>
                     <constraint firstItem="c0N-bw-W6J" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="KNH-sl-y0M"/>
                     <constraint firstItem="dVv-eW-eaJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KdM-xW-9pK"/>
+                    <constraint firstItem="iqb-KM-jEb" firstAttribute="trailing" secondItem="yvo-ca-mYX" secondAttribute="trailing" id="Kx9-Lr-ViK"/>
                     <constraint firstItem="XK9-Pf-SQq" firstAttribute="leading" secondItem="c0N-bw-W6J" secondAttribute="trailing" constant="10" id="Nn9-2e-t3b"/>
                     <constraint firstAttribute="trailing" secondItem="dVv-eW-eaJ" secondAttribute="trailing" id="Ohp-Rc-6mQ"/>
                     <constraint firstItem="Iou-Ki-7tP" firstAttribute="trailing" secondItem="c0N-bw-W6J" secondAttribute="trailing" constant="5" id="VgK-Sm-PyZ"/>
@@ -156,12 +163,15 @@
                     <constraint firstItem="Iou-Ki-7tP" firstAttribute="bottom" secondItem="c0N-bw-W6J" secondAttribute="bottom" constant="5" id="bHZ-Ic-Ig8"/>
                     <constraint firstItem="XK9-Pf-SQq" firstAttribute="top" secondItem="c0N-bw-W6J" secondAttribute="top" id="kmn-8f-EfJ"/>
                     <constraint firstItem="dM4-Qc-uj7" firstAttribute="bottom" secondItem="c0N-bw-W6J" secondAttribute="bottom" id="rYA-ve-hkZ"/>
+                    <constraint firstItem="iqb-KM-jEb" firstAttribute="top" secondItem="c0N-bw-W6J" secondAttribute="bottom" constant="10" id="s26-Gf-zSs"/>
                     <constraint firstItem="c0N-bw-W6J" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="xzB-N4-pid"/>
+                    <constraint firstItem="iqb-KM-jEb" firstAttribute="leading" secondItem="c0N-bw-W6J" secondAttribute="leading" id="yoc-bB-70R"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="caiBtn" destination="Ata-24-3Jj" id="bSk-MM-p5K"/>
                 <outlet property="commentBtn" destination="Pcb-g3-Z6p" id="7LL-wH-E9N"/>
+                <outlet property="contentLabel" destination="iqb-KM-jEb" id="Yqk-qO-ZsU"/>
                 <outlet property="creatTimeLabel" destination="dM4-Qc-uj7" id="Phc-Hn-WKr"/>
                 <outlet property="dingBtn" destination="mIP-Ya-ASe" id="OyI-jh-nld"/>
                 <outlet property="nameLabel" destination="XK9-Pf-SQq" id="Ml2-Va-vaL"/>

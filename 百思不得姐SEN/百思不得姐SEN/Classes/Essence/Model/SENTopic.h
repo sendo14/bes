@@ -22,6 +22,7 @@
 
 @property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 
 
 

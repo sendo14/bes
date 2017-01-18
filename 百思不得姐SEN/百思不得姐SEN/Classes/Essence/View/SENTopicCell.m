@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *sinaV;
 
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end
 
@@ -40,6 +41,8 @@
     self.nameLabel.text = topic.name;
     self.creatTimeLabel.text = topic.create_time;
     self.sinaV.hidden = !topic.isSina_v;
+    
+    self.contentLabel.text = topic.text;
     
     [self setupButtonNumber:self.dingBtn count:topic.ding defaultTitle:@"顶"];
     [self setupButtonNumber:self.caiBtn count:topic.cai defaultTitle:@"踩"];

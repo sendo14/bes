@@ -9,6 +9,24 @@
 #import "SENTopic.h"
 
 @implementation SENTopic
+{
+    CGFloat _cellHeight;
+}
+
+- (CGFloat)cellHeight{
+    
+    if (!_cellHeight) {
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - SENTopicCellMargin * 4, MAXFLOAT);
+        CGFloat textH = [self.text boundingRectWithSize:maxSize
+                                                options:NSStringDrawingUsesLineFragmentOrigin
+                                             attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]}
+                                                context:nil].size.height;
+        
+        _cellHeight = SENTopicCellTextY + textH + SENTopicCellBottomBarH + SENTopicCellMargin * 2;
+    }
+    
+    return _cellHeight;
+}
 
 - (NSString *)create_time{
     // 转格式

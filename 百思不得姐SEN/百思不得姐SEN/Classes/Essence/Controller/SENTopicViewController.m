@@ -24,7 +24,8 @@ static NSString * const topicCellID = @"topic";
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, copy) NSString *maxtime;
 
-
+/** 上一次的请求参数 */
+@property (nonatomic, strong) NSDictionary *params;
 @end
 
 @implementation SENTopicViewController
@@ -68,12 +69,14 @@ static NSString * const topicCellID = @"topic";
 }
 
 - (void)loadNewTopics{
-    self.page = 0;
+//    self.page = 0;
+    [self.tableView.mj_footer endRefreshing];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
+    self.params = params;
     
     // http://api.budejie.com/api/api_open.php
     
@@ -81,33 +84,43 @@ static NSString * const topicCellID = @"topic";
                              parameters:params
                                progress:nil
                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    if (self.params != params) return;
+                                    
                                     self.maxtime = responseObject[@"info"][@"maxtime"];
                                     
                                     self.topics = [SENTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
                                     
                                     [self.tableView reloadData];
                                     [self.tableView.mj_header endRefreshing];
+                                    
+                                    // 清空页码
+                                    self.page = 0;
                                 }
                                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                    if (self.params != params) return;
+                                    
                                     [self.tableView.mj_header endRefreshing];
                                 }];
 }
 
 - (void)loadMoreTopics{
-    self.page++;
+    [self.tableView.mj_header endRefreshing];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
-    params[@"page"] = @(self.page);
+    NSInteger page = self.page + 1;
+    params[@"page"] = @(page);
     params[@"maxtime"] = self.maxtime;
-    
+    self.params = params;
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
                              parameters:params
                                progress:nil
                                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                                    if (self.params != params) return;
+                                    
                                     self.maxtime = responseObject[@"info"][@"maxtime"];
                                     
                                     NSArray *newTopics = [SENTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -115,8 +128,13 @@ static NSString * const topicCellID = @"topic";
                                     
                                     [self.tableView reloadData];
                                     [self.tableView.mj_footer endRefreshing];
+                                    
+                                    // 设置页码
+                                    self.page = page;
                                 }
                                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                    if (self.params != params) return;
+                                    
                                     [self.tableView.mj_footer endRefreshing];
                                 }];
 }
@@ -136,7 +154,10 @@ static NSString * const topicCellID = @"topic";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    
+    SENTopic *topic = self.topics[indexPath.row];
+
+    return topic.cellHeight;
 }
 
 @end
