@@ -7,22 +7,56 @@
 //
 
 #import "SENTopic.h"
+#import <MJExtension.h>
 
 @implementation SENTopic
 {
     CGFloat _cellHeight;
 }
 
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{
+             @"pictureS_URL" : @"image0",
+             @"pictureM_URL" : @"image2",
+             @"pictureL_URL" : @"image1"
+             };
+}
+
 - (CGFloat)cellHeight{
     
     if (!_cellHeight) {
+        // 顶部固定H + 文字H
         CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - SENTopicCellMargin * 4, MAXFLOAT);
         CGFloat textH = [self.text boundingRectWithSize:maxSize
                                                 options:NSStringDrawingUsesLineFragmentOrigin
                                              attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]}
                                                 context:nil].size.height;
+        _cellHeight += SENTopicCellTextY + textH + SENTopicCellMargin;
         
-        _cellHeight = SENTopicCellTextY + textH + SENTopicCellBottomBarH + SENTopicCellMargin * 2;
+        // + 图片H
+        if (self.type == SENTopicTypePicture) {
+            // 算好frame
+            
+            CGFloat pictureW = maxSize.width;
+            CGFloat pictureH = pictureW * self.height / self.width;
+            
+            // 控制大图片的显示范围
+            if (pictureH >= SENTopicCellPictureMaxH) {
+                pictureH = SENTopicCellPictureFixedH;
+                self.bigPicture = YES;
+            }
+            
+            CGFloat pictureX = SENTopicCellMargin;
+            CGFloat pictureY = SENTopicCellTextY + textH +SENTopicCellMargin;
+            
+            _pictureFrame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
+            _cellHeight += pictureH +SENTopicCellMargin;
+        } else if (self.type == SENTopicTypeVoice){
+            
+        }
+        
+        // + 底部固定H
+        _cellHeight += SENTopicCellBottomBarH + SENTopicCellMargin;
     }
     
     return _cellHeight;

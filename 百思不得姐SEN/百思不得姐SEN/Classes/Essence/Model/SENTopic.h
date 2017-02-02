@@ -22,7 +22,21 @@
 
 @property (nonatomic, assign, getter=isSina_v) BOOL sina_v;
 
+/** 图片相关 */
+@property (nonatomic, assign) CGFloat width;
+@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, copy) NSString *pictureS_URL;
+@property (nonatomic, copy) NSString *pictureM_URL;
+@property (nonatomic, copy) NSString *pictureL_URL;
+
+@property (nonatomic, assign) SENTopicType type;
+
+
+/** 辅助属性 */
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
+@property (nonatomic, assign, readonly) CGRect pictureFrame;
+
+@property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
 
 
 

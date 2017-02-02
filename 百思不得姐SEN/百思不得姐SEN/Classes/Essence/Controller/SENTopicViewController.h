@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, SENTopicType) {
-    SENTopicTypeAll = 1,
-    SENTopicTypePicture = 10,
-    SENTopicTypeWord = 29,
-    SENTopicTypeVoice = 31,
-    SENTopicTypeVideo = 41,
-};
-
 @interface SENTopicViewController : UITableViewController
 
 @property (nonatomic, assign) SENTopicType type;
