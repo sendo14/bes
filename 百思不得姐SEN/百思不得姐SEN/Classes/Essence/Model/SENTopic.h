@@ -38,6 +38,7 @@
 
 @property (nonatomic, assign, getter=isBigPicture) BOOL bigPicture;
 
+@property (nonatomic, assign) CGFloat pictureProgress;
 
 
 @end

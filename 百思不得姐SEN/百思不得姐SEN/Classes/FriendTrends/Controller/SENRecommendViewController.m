@@ -95,7 +95,7 @@ static NSString * const SENUserID = @"user";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(listRow.id); // ???
+    params[@"category_id"] = @(listRow.ID); // ???
     params[@"page"] = @"2";
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"
@@ -162,7 +162,7 @@ static NSString * const SENUserID = @"user";
         NSMutableDictionary *params = [NSMutableDictionary dictionary];
         params[@"a"] = @"list";
         params[@"c"] = @"subscribe";
-        params[@"category_id"] = @(listRow.id); // ???
+        params[@"category_id"] = @(listRow.ID); // ???
         
         [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             

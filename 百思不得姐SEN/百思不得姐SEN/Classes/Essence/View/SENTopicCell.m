@@ -8,6 +8,8 @@
 
 #import "SENTopicCell.h"
 #import "SENTopic.h"
+#import "SENTopicPictureView.h"
+
 #import <UIImageView+WebCache.h>
 
 @interface SENTopicCell()
@@ -24,9 +26,20 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
+@property (nonatomic, weak) SENTopicPictureView *pictureView;
+
 @end
 
 @implementation SENTopicCell
+
+- (SENTopicPictureView *)pictureView{
+    if (! _pictureView) {
+        SENTopicPictureView *pictureView = [SENTopicPictureView pictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -48,6 +61,15 @@
     [self setupButtonNumber:self.caiBtn count:topic.cai defaultTitle:@"踩"];
     [self setupButtonNumber:self.repostBtn count:topic.repost defaultTitle:@"分享"];
     [self setupButtonNumber:self.commentBtn count:topic.comment defaultTitle:@"评论"];
+    
+    // 添加不同类型帖子到cell中间
+    if (topic.type == SENTopicTypePicture) {
+        self.pictureView.topic = topic;
+        self.pictureView.frame = topic.pictureFrame;
+        
+    } else if (topic.type == SENTopicTypeVoice){
+        
+    }
     
 }
 

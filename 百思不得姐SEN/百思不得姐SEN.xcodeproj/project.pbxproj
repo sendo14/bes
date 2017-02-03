@@ -36,6 +36,11 @@
 		C78D13F71DE7E0A800990EB2 /* SENRecommendListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C78D13F51DE7E0A800990EB2 /* SENRecommendListCell.m */; };
 		C78D13F81DE7E0A800990EB2 /* SENRecommendListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78D13F61DE7E0A800990EB2 /* SENRecommendListCell.xib */; };
 		C78E3C1A1DE9720800EAE94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78E3C191DE9720800EAE94D /* Assets.xcassets */; };
+		C7907E5D1E4421E6007C13AC /* SENTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7907E5C1E4421E6007C13AC /* SENTopicPictureView.m */; };
+		C7907E5F1E442256007C13AC /* SENTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7907E5E1E442256007C13AC /* SENTopicPictureView.xib */; };
+		C7907E651E446756007C13AC /* SENM13ProgressViewRing.m in Sources */ = {isa = PBXBuildFile; fileRef = C7907E641E446756007C13AC /* SENM13ProgressViewRing.m */; };
+		C7907E691E448834007C13AC /* SENShowPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7907E671E448834007C13AC /* SENShowPictureViewController.m */; };
+		C7907E6A1E448834007C13AC /* SENShowPictureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7907E681E448834007C13AC /* SENShowPictureViewController.xib */; };
 		C7946FCC1DF2ABBA0055C9AD /* SENLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7946FCA1DF2ABBA0055C9AD /* SENLoginViewController.m */; };
 		C7946FCD1DF2ABBA0055C9AD /* SENLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7946FCB1DF2ABBA0055C9AD /* SENLoginViewController.xib */; };
 		C797112C1E26236A00B27BBF /* SENConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C797112B1E26236A00B27BBF /* SENConst.m */; };
@@ -121,6 +126,14 @@
 		C78D13F51DE7E0A800990EB2 /* SENRecommendListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENRecommendListCell.m; sourceTree = "<group>"; };
 		C78D13F61DE7E0A800990EB2 /* SENRecommendListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENRecommendListCell.xib; sourceTree = "<group>"; };
 		C78E3C191DE9720800EAE94D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7907E5B1E4421E6007C13AC /* SENTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENTopicPictureView.h; sourceTree = "<group>"; };
+		C7907E5C1E4421E6007C13AC /* SENTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENTopicPictureView.m; sourceTree = "<group>"; };
+		C7907E5E1E442256007C13AC /* SENTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENTopicPictureView.xib; sourceTree = "<group>"; };
+		C7907E631E446756007C13AC /* SENM13ProgressViewRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENM13ProgressViewRing.h; sourceTree = "<group>"; };
+		C7907E641E446756007C13AC /* SENM13ProgressViewRing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENM13ProgressViewRing.m; sourceTree = "<group>"; };
+		C7907E661E448834007C13AC /* SENShowPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENShowPictureViewController.h; sourceTree = "<group>"; };
+		C7907E671E448834007C13AC /* SENShowPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENShowPictureViewController.m; sourceTree = "<group>"; };
+		C7907E681E448834007C13AC /* SENShowPictureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENShowPictureViewController.xib; sourceTree = "<group>"; };
 		C7946FC91DF2ABBA0055C9AD /* SENLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SENLoginViewController.h; sourceTree = "<group>"; };
 		C7946FCA1DF2ABBA0055C9AD /* SENLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SENLoginViewController.m; sourceTree = "<group>"; };
 		C7946FCB1DF2ABBA0055C9AD /* SENLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SENLoginViewController.xib; sourceTree = "<group>"; };
@@ -275,6 +288,9 @@
 				C7C55DD01DE096EA003E46B2 /* SENEssenceViewController.m */,
 				C79EEC441E2B53E200CE9B05 /* SENTopicViewController.h */,
 				C79EEC451E2B53E200CE9B05 /* SENTopicViewController.m */,
+				C7907E661E448834007C13AC /* SENShowPictureViewController.h */,
+				C7907E671E448834007C13AC /* SENShowPictureViewController.m */,
+				C7907E681E448834007C13AC /* SENShowPictureViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +310,11 @@
 				C7472CA11E24CD2A00890178 /* SENTopicCell.h */,
 				C7472CA21E24CD2A00890178 /* SENTopicCell.m */,
 				C7472CA31E24CD2A00890178 /* SENTopicCell.xib */,
+				C7907E5B1E4421E6007C13AC /* SENTopicPictureView.h */,
+				C7907E5C1E4421E6007C13AC /* SENTopicPictureView.m */,
+				C7907E5E1E442256007C13AC /* SENTopicPictureView.xib */,
+				C7907E631E446756007C13AC /* SENM13ProgressViewRing.h */,
+				C7907E641E446756007C13AC /* SENM13ProgressViewRing.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -590,7 +611,9 @@
 				C7946FCD1DF2ABBA0055C9AD /* SENLoginViewController.xib in Resources */,
 				C7472CA51E24CD2A00890178 /* SENTopicCell.xib in Resources */,
 				C743B0221DEA7B2000D1235A /* SENRecommendUserCell.xib in Resources */,
+				C7907E6A1E448834007C13AC /* SENShowPictureViewController.xib in Resources */,
 				C7584C031E0D3A0700EFD9BC /* SENTestViewViewController.xib in Resources */,
+				C7907E5F1E442256007C13AC /* SENTopicPictureView.xib in Resources */,
 				C78D13F81DE7E0A800990EB2 /* SENRecommendListCell.xib in Resources */,
 				C74CD1B61DF651C6001577B4 /* SENPushGuideView.xib in Resources */,
 				C753D51B1DE43C0C009B01DC /* SENFriendTrendsViewController.xib in Resources */,
@@ -674,6 +697,7 @@
 				C7584BFC1E0D11CA00EFD9BC /* SENSudoku.m in Sources */,
 				C78554D91DE3E74C0077A3E9 /* SENNavigationController.m in Sources */,
 				C797112C1E26236A00B27BBF /* SENConst.m in Sources */,
+				C7907E691E448834007C13AC /* SENShowPictureViewController.m in Sources */,
 				C782A93B1E2CA7680076F4FA /* NSDate+SENExtension.m in Sources */,
 				C74CD1B41DF651B7001577B4 /* SENPushGuideView.m in Sources */,
 				C7C55DF21DE096EA003E46B2 /* AppDelegate.m in Sources */,
@@ -681,6 +705,8 @@
 				C7C55DF11DE096EA003E46B2 /* SENNewViewController.m in Sources */,
 				C787E8C01DF54BAC008D7404 /* SENVerticalButton.m in Sources */,
 				C753D51F1DE44CA1009B01DC /* SENRecommendViewController.m in Sources */,
+				C7907E5D1E4421E6007C13AC /* SENTopicPictureView.m in Sources */,
+				C7907E651E446756007C13AC /* SENM13ProgressViewRing.m in Sources */,
 				C7472CA41E24CD2A00890178 /* SENTopicCell.m in Sources */,
 				C78D13F71DE7E0A800990EB2 /* SENRecommendListCell.m in Sources */,
 				C78D13F31DE7DB8A00990EB2 /* SENRecommendList.m in Sources */,

@@ -7,8 +7,15 @@
 //  推荐关注 左边的数据模型
 
 #import "SENRecommendList.h"
+#import <MJExtension.h>
 
 @implementation SENRecommendList
+
++ (NSDictionary *)mj_replacedKeyFromPropertyName{
+    return @{
+             @"ID" : @"id"
+             };
+}
 
 - (NSMutableArray *)users{
     if (! _users) {

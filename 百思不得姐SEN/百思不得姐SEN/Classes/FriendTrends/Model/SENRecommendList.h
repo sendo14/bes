@@ -10,7 +10,7 @@
 
 @interface SENRecommendList : NSObject
 
-@property (nonatomic, assign) NSInteger id; // ID
+@property (nonatomic, assign) NSInteger ID; // ID
 @property (nonatomic, assign) NSInteger count; // 总数
 @property (nonatomic, copy) NSString *name; // 名字
 

@@ -12,6 +12,7 @@
 @implementation SENTopic
 {
     CGFloat _cellHeight;
+    CGRect _pictureFrame;
 }
 
 + (NSDictionary *)mj_replacedKeyFromPropertyName{
@@ -35,7 +36,7 @@
         
         // + 图片H
         if (self.type == SENTopicTypePicture) {
-            // 算好frame
+            // 算好显示时的frame，显示cell时用
             
             CGFloat pictureW = maxSize.width;
             CGFloat pictureH = pictureW * self.height / self.width;
