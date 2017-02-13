@@ -7,7 +7,7 @@
 //
 
 #import "SENMeViewController.h"
-#import "SENTestViewViewController.h"
+//#import "SENTestViewViewController.h"
 
 @implementation SENMeViewController
 
@@ -30,8 +30,7 @@
 }
 
 - (void)nightModeClick{
-    SENTestViewViewController *vc = [[SENTestViewViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 @end
